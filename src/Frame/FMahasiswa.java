@@ -5,6 +5,12 @@
 package Frame;
 
 import java.awt.Color;
+import Koneksi.Connection;
+import Models.ModelTabel;
+import java.sql.*;
+import java.util.*;
+import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -15,8 +21,11 @@ public class FMahasiswa extends javax.swing.JFrame {
     int mousepX;
     int mousepY;
     
+    List<ModelTabel> mhs = new ArrayList<>();
+    
     public FMahasiswa() {
         initComponents();
+        showTableData();
         setForm();
     }
 
@@ -99,7 +108,7 @@ public class FMahasiswa extends javax.swing.JFrame {
         btnedit = new javax.swing.JButton();
         btnhapus = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblMhs = new javax.swing.JTable();
         pEdit = new javax.swing.JPanel();
         p3 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -580,7 +589,7 @@ public class FMahasiswa extends javax.swing.JFrame {
         });
         jPanel2.add(btnhapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 120, 30));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblMhs.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -591,7 +600,7 @@ public class FMahasiswa extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tblMhs);
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 650, 400));
 
@@ -970,6 +979,68 @@ public class FMahasiswa extends javax.swing.JFrame {
         cmbAgama1.setSelectedIndex(0);
     }
     
+    public void showTableData()
+    {
+        Connection.koneksi();
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("No");
+        model.addColumn("Nama");
+        model.addColumn("NIK");
+        model.addColumn("NISN");
+        model.addColumn("Jenis Kelamin");
+        model.addColumn("Agama");
+        model.addColumn("Tanggal Lahir");
+        model.addColumn("Tempat Lahir");
+        model.addColumn("Alamat");
+        model.addColumn("Asal Sekolah");
+        model.addColumn("No Telepon");
+        model.addColumn("Nilai Rapot");
+        
+        String sql = "SELECT * FROM mhs_baru ";
+        try {
+           mhs.clear();
+           Connection.rs = Connection.stmt.executeQuery(sql); 
+           while(Connection.rs.next())
+           {
+               mhs.add(new ModelTabel(Connection.rs.getInt("id_mhs"), Connection.rs.getString("nama"),
+                       Connection.rs.getString("nik"),Connection.rs.getString("nisn"),Connection.rs.getString("jk"),
+                       Connection.rs.getString("agama"),Connection.rs.getString("tgl_lahir"),
+                       Connection.rs.getString("tempat_lahir"),Connection.rs.getString("alamat"),
+                       Connection.rs.getString("asal_sekolah"),Connection.rs.getString("no_telp"),
+                       Connection.rs.getFloat("nilai_rapot")));
+           }
+           
+           int i = 1;
+           for(ModelTabel m: mhs)
+           {
+               model.addRow(new Object[] {
+                   i,m.getNama(),
+                   i,m.getNik(),
+                   i,m.getNisn(),
+                   i,m.getJk(),
+                   i,m.getAgama(),
+                   i,m.getTgl_lahir(),
+                   i,m.getTempat_lahir(),
+                   i,m.getAlamat(),
+                   i,m.getAsal_sekolah(),
+                   i,m.getNo_telp(),
+                   i,m.getNilai_rapot(),
+               });
+               i++;
+           }
+           Connection.rs.close();
+           tblMhs.setModel(model);
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+    
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -1079,7 +1150,6 @@ public class FMahasiswa extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JPanel logo;
     private javax.swing.JPanel logout;
     private javax.swing.JPanel p1;
@@ -1097,6 +1167,7 @@ public class FMahasiswa extends javax.swing.JFrame {
     private javax.swing.JPanel sideInput;
     private javax.swing.JPanel sideList;
     private javax.swing.JPanel sidepane;
+    private javax.swing.JTable tblMhs;
     private javax.swing.JPanel toppane;
     private javax.swing.JTextField txtAlamat;
     private javax.swing.JTextField txtAlamat1;
