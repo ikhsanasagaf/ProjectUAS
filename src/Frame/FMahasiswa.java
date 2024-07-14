@@ -61,6 +61,14 @@ public class FMahasiswa extends javax.swing.JFrame {
         toppane = new javax.swing.JPanel();
         btnClose = new javax.swing.JLabel();
         btnMin = new javax.swing.JLabel();
+        pList = new javax.swing.JPanel();
+        p2 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        btnedit = new javax.swing.JButton();
+        btnhapus = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         pInput = new javax.swing.JPanel();
         p1 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -103,10 +111,6 @@ public class FMahasiswa extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        pList = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Mahasiswa");
@@ -269,6 +273,83 @@ public class FMahasiswa extends javax.swing.JFrame {
         );
 
         bg.add(toppane, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 780, 30));
+
+        pList.setBackground(new java.awt.Color(207, 207, 207));
+        pList.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        p2.setBackground(new java.awt.Color(245, 245, 245));
+
+        jLabel12.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(48, 85, 134));
+        jLabel12.setText("List Mahasiswa Baru");
+
+        javax.swing.GroupLayout p2Layout = new javax.swing.GroupLayout(p2);
+        p2.setLayout(p2Layout);
+        p2Layout.setHorizontalGroup(
+            p2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p2Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel12)
+                .addContainerGap(565, Short.MAX_VALUE))
+        );
+        p2Layout.setVerticalGroup(
+            p2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+        );
+
+        pList.add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 40));
+
+        jPanel2.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnedit.setBackground(new java.awt.Color(52, 106, 163));
+        btnedit.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        btnedit.setForeground(new java.awt.Color(255, 255, 255));
+        btnedit.setText("EDIT");
+        btnedit.setBorder(null);
+        btnedit.setBorderPainted(false);
+        btnedit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnedit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneditActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, 120, 30));
+
+        btnhapus.setBackground(new java.awt.Color(52, 106, 163));
+        btnhapus.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        btnhapus.setForeground(new java.awt.Color(255, 255, 255));
+        btnhapus.setText("HAPUS");
+        btnhapus.setBorder(null);
+        btnhapus.setBorderPainted(false);
+        btnhapus.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnhapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnhapusActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnhapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 420, 120, 30));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 650, 400));
+
+        pList.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 730, 470));
+
+        bg.add(pList, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 770, 550));
 
         pInput.setBackground(new java.awt.Color(207, 207, 207));
         pInput.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -490,23 +571,6 @@ public class FMahasiswa extends javax.swing.JFrame {
 
         bg.add(pHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 770, 550));
 
-        pList.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel14.setFont(new java.awt.Font("Bahnschrift", 1, 40)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(48, 85, 134));
-        jLabel14.setText("Ini List");
-        pList.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 320, 50));
-
-        jLabel15.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(48, 85, 134));
-        jLabel15.setText("Calon Mahasiswa Baru Udinus ");
-        pList.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 260, 40));
-
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home.png"))); // NOI18N
-        pList.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, -1));
-
-        bg.add(pList, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 770, 550));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -579,6 +643,14 @@ public class FMahasiswa extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
+    private void btneditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btneditActionPerformed
+
+    private void btnhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhapusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnhapusActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -623,15 +695,15 @@ public class FMahasiswa extends javax.swing.JFrame {
     private javax.swing.JLabel btnKeluar2;
     private javax.swing.JLabel btnKeluar3;
     private javax.swing.JLabel btnMin;
+    private javax.swing.JButton btnedit;
+    private javax.swing.JButton btnhapus;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -661,11 +733,15 @@ public class FMahasiswa extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JPanel logo;
     private javax.swing.JPanel logout;
     private javax.swing.JPanel p1;
+    private javax.swing.JPanel p2;
     private javax.swing.JPanel pHome;
     private javax.swing.JPanel pInput;
     private javax.swing.JPanel pList;
