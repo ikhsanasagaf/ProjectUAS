@@ -11,7 +11,7 @@ package Koneksi;
  */
 public class Connection {
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://127.0.0.1/test?autoReconnect=true&useSSL=false";
+    static final String DB_URL = "jdbc:mysql://127.0.0.1/mhs_baru";
     static final String USER = "root";
     static final String PASS = "";
     
