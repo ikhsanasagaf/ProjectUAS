@@ -22,7 +22,9 @@ public class ModelTabel {
     private String no_telp;
     private float nilai_rapot;
 
-    public ModelTabel(int id_mhs, String nama, String nik, String nisn, String jk, String agama, String tgl_lahir, String tempat_lahir, String alamat,String asal_sekolah, String no_telp, float nilai_rapot)
+    public ModelTabel(int id_mhs, String nama, String nik, String nisn, String jk, 
+            String agama, String tgl_lahir, String tempat_lahir, String alamat,
+            String asal_sekolah, String no_telp, float nilai_rapot)
     {
         this.id_mhs = id_mhs;
         this.nama = nama;
