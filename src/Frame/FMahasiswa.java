@@ -17,18 +17,7 @@ public class FMahasiswa extends javax.swing.JFrame {
     
     public FMahasiswa() {
         initComponents();
-        sideHome.setVisible(true);
-        txtNama.setBackground(new Color(0,0,0,1));
-        txtNISN.setBackground(new Color(0,0,0,1));
-        txtNIK.setBackground(new Color(0,0,0,1));
-        txttelepon.setBackground(new Color(0,0,0,1));
-        txtAlamat.setBackground(new Color(0,0,0,1));
-        txtAsalSkl.setBackground(new Color(0,0,0,1));
-        txtNilaiRpt.setBackground(new Color(0,0,0,1));
-        txtTLahir.setBackground(new Color(0,0,0,1));
-        txtTglLahir.setBackground(new Color(0,0,0,1));
-        
-           
+        setForm();
     }
 
     /**
@@ -61,14 +50,6 @@ public class FMahasiswa extends javax.swing.JFrame {
         toppane = new javax.swing.JPanel();
         btnClose = new javax.swing.JLabel();
         btnMin = new javax.swing.JLabel();
-        pList = new javax.swing.JPanel();
-        p2 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        btnedit = new javax.swing.JButton();
-        btnhapus = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         pInput = new javax.swing.JPanel();
         p1 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -76,7 +57,7 @@ public class FMahasiswa extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         txtNama = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnSimpan = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         txtNISN = new javax.swing.JTextField();
@@ -84,10 +65,10 @@ public class FMahasiswa extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         txtNIK = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        radLaki = new javax.swing.JRadioButton();
+        radPer = new javax.swing.JRadioButton();
         jLabel23 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cmbAgama = new javax.swing.JComboBox<>();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         txtTglLahir = new javax.swing.JTextField();
@@ -98,7 +79,7 @@ public class FMahasiswa extends javax.swing.JFrame {
         txtAlamat = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        txttelepon = new javax.swing.JTextField();
+        txtTelepon = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         txtAsalSkl = new javax.swing.JTextField();
@@ -111,6 +92,53 @@ public class FMahasiswa extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        pList = new javax.swing.JPanel();
+        p2 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        btnedit = new javax.swing.JButton();
+        btnhapus = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        pEdit = new javax.swing.JPanel();
+        p3 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        txtNama1 = new javax.swing.JTextField();
+        btnbatal = new javax.swing.JButton();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        txtNISN1 = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        txtNIK1 = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        radLaki1 = new javax.swing.JRadioButton();
+        radPer1 = new javax.swing.JRadioButton();
+        jLabel43 = new javax.swing.JLabel();
+        cmbAgama1 = new javax.swing.JComboBox<>();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        txtTglLahir1 = new javax.swing.JTextField();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        txtTLahir1 = new javax.swing.JTextField();
+        jLabel48 = new javax.swing.JLabel();
+        txtAlamat1 = new javax.swing.JTextField();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        txtTelepon1 = new javax.swing.JTextField();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        txtAsalSkl1 = new javax.swing.JTextField();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        txtNilaiRpt1 = new javax.swing.JTextField();
+        jLabel56 = new javax.swing.JLabel();
+        btnSimEdit1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Mahasiswa");
@@ -274,83 +302,6 @@ public class FMahasiswa extends javax.swing.JFrame {
 
         bg.add(toppane, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 780, 30));
 
-        pList.setBackground(new java.awt.Color(207, 207, 207));
-        pList.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        p2.setBackground(new java.awt.Color(245, 245, 245));
-
-        jLabel12.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(48, 85, 134));
-        jLabel12.setText("List Mahasiswa Baru");
-
-        javax.swing.GroupLayout p2Layout = new javax.swing.GroupLayout(p2);
-        p2.setLayout(p2Layout);
-        p2Layout.setHorizontalGroup(
-            p2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(p2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel12)
-                .addContainerGap(565, Short.MAX_VALUE))
-        );
-        p2Layout.setVerticalGroup(
-            p2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
-        );
-
-        pList.add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 40));
-
-        jPanel2.setBackground(new java.awt.Color(245, 245, 245));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnedit.setBackground(new java.awt.Color(52, 106, 163));
-        btnedit.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
-        btnedit.setForeground(new java.awt.Color(255, 255, 255));
-        btnedit.setText("EDIT");
-        btnedit.setBorder(null);
-        btnedit.setBorderPainted(false);
-        btnedit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnedit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btneditActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, 120, 30));
-
-        btnhapus.setBackground(new java.awt.Color(52, 106, 163));
-        btnhapus.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
-        btnhapus.setForeground(new java.awt.Color(255, 255, 255));
-        btnhapus.setText("HAPUS");
-        btnhapus.setBorder(null);
-        btnhapus.setBorderPainted(false);
-        btnhapus.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnhapus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnhapusActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnhapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 420, 120, 30));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable1);
-
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 650, 400));
-
-        pList.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 730, 470));
-
-        bg.add(pList, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 770, 550));
-
         pInput.setBackground(new java.awt.Color(207, 207, 207));
         pInput.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -395,19 +346,19 @@ public class FMahasiswa extends javax.swing.JFrame {
         txtNama.setBorder(null);
         jPanel1.add(txtNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 220, 30));
 
-        jButton1.setBackground(new java.awt.Color(52, 106, 163));
-        jButton1.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("SIMPAN");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSimpan.setBackground(new java.awt.Color(52, 106, 163));
+        btnSimpan.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        btnSimpan.setForeground(new java.awt.Color(255, 255, 255));
+        btnSimpan.setText("SIMPAN");
+        btnSimpan.setBorder(null);
+        btnSimpan.setBorderPainted(false);
+        btnSimpan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSimpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSimpanActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 120, 30));
+        jPanel1.add(btnSimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 120, 30));
 
         jLabel18.setBackground(new java.awt.Color(52, 106, 163));
         jLabel18.setForeground(new java.awt.Color(52, 106, 163));
@@ -442,24 +393,24 @@ public class FMahasiswa extends javax.swing.JFrame {
         jLabel22.setText("Agama");
         jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 43, 20));
 
-        jRadioButton1.setText("Laki - Laki");
-        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 80, -1));
+        radLaki.setText("Laki - Laki");
+        jPanel1.add(radLaki, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 80, -1));
 
-        jRadioButton2.setText("Perempuan");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        radPer.setText("Perempuan");
+        radPer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                radPerActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 90, -1));
+        jPanel1.add(radPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 90, -1));
 
         jLabel23.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(48, 85, 134));
         jLabel23.setText("NIK");
         jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 43, 20));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Islam", "Kristen", "Katolik", "Budha", "Hindu", "Lainnya" }));
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 80, -1));
+        cmbAgama.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Islam", "Kristen", "Katolik", "Budha", "Hindu", "Lainnya" }));
+        jPanel1.add(cmbAgama, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 80, -1));
 
         jLabel24.setBackground(new java.awt.Color(52, 106, 163));
         jLabel24.setForeground(new java.awt.Color(52, 106, 163));
@@ -508,9 +459,9 @@ public class FMahasiswa extends javax.swing.JFrame {
         jLabel31.setText("No. Telepon");
         jPanel1.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 70, 20));
 
-        txttelepon.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
-        txttelepon.setBorder(null);
-        jPanel1.add(txttelepon, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 220, 30));
+        txtTelepon.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        txtTelepon.setBorder(null);
+        jPanel1.add(txtTelepon, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 220, 30));
 
         jLabel32.setBackground(new java.awt.Color(52, 106, 163));
         jLabel32.setForeground(new java.awt.Color(52, 106, 163));
@@ -570,6 +521,300 @@ public class FMahasiswa extends javax.swing.JFrame {
         pHome.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, -1));
 
         bg.add(pHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 770, 550));
+
+        pList.setBackground(new java.awt.Color(207, 207, 207));
+        pList.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        p2.setBackground(new java.awt.Color(245, 245, 245));
+
+        jLabel12.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(48, 85, 134));
+        jLabel12.setText("List Mahasiswa Baru");
+
+        javax.swing.GroupLayout p2Layout = new javax.swing.GroupLayout(p2);
+        p2.setLayout(p2Layout);
+        p2Layout.setHorizontalGroup(
+            p2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p2Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel12)
+                .addContainerGap(565, Short.MAX_VALUE))
+        );
+        p2Layout.setVerticalGroup(
+            p2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+        );
+
+        pList.add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 40));
+
+        jPanel2.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnedit.setBackground(new java.awt.Color(52, 106, 163));
+        btnedit.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        btnedit.setForeground(new java.awt.Color(255, 255, 255));
+        btnedit.setText("EDIT");
+        btnedit.setBorder(null);
+        btnedit.setBorderPainted(false);
+        btnedit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnedit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneditActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, 120, 30));
+
+        btnhapus.setBackground(new java.awt.Color(52, 106, 163));
+        btnhapus.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        btnhapus.setForeground(new java.awt.Color(255, 255, 255));
+        btnhapus.setText("HAPUS");
+        btnhapus.setBorder(null);
+        btnhapus.setBorderPainted(false);
+        btnhapus.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnhapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnhapusActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnhapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 120, 30));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 650, 400));
+
+        pList.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 730, 470));
+
+        bg.add(pList, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 770, 550));
+
+        pEdit.setBackground(new java.awt.Color(207, 207, 207));
+        pEdit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        p3.setBackground(new java.awt.Color(245, 245, 245));
+
+        jLabel14.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(48, 85, 134));
+        jLabel14.setText("Edit Data Mahasiswa Baru");
+
+        javax.swing.GroupLayout p3Layout = new javax.swing.GroupLayout(p3);
+        p3.setLayout(p3Layout);
+        p3Layout.setHorizontalGroup(
+            p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p3Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel14)
+                .addContainerGap(521, Short.MAX_VALUE))
+        );
+        p3Layout.setVerticalGroup(
+            p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+        );
+
+        pEdit.add(p3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 40));
+
+        jPanel3.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel15.setBackground(new java.awt.Color(52, 106, 163));
+        jLabel15.setForeground(new java.awt.Color(52, 106, 163));
+        jLabel15.setText("______________________________________________");
+        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 230, -1));
+
+        jLabel29.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(48, 85, 134));
+        jLabel29.setText("Nama");
+        jPanel3.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 43, 20));
+
+        txtNama1.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        txtNama1.setBorder(null);
+        jPanel3.add(txtNama1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 220, 30));
+
+        btnbatal.setBackground(new java.awt.Color(52, 106, 163));
+        btnbatal.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        btnbatal.setForeground(new java.awt.Color(255, 255, 255));
+        btnbatal.setText("BATAL");
+        btnbatal.setBorder(null);
+        btnbatal.setBorderPainted(false);
+        btnbatal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnbatal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnbatalActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnbatal, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, 120, 30));
+
+        jLabel37.setBackground(new java.awt.Color(52, 106, 163));
+        jLabel37.setForeground(new java.awt.Color(52, 106, 163));
+        jLabel37.setText("______________________________________________");
+        jPanel3.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 230, -1));
+
+        jLabel39.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(48, 85, 134));
+        jLabel39.setText("NISN");
+        jPanel3.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 43, 20));
+
+        txtNISN1.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        txtNISN1.setBorder(null);
+        jPanel3.add(txtNISN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 220, 30));
+
+        jLabel40.setBackground(new java.awt.Color(52, 106, 163));
+        jLabel40.setForeground(new java.awt.Color(52, 106, 163));
+        jLabel40.setText("______________________________________________");
+        jPanel3.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 230, -1));
+
+        jLabel41.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(48, 85, 134));
+        jLabel41.setText("Jenis Kelamin");
+        jPanel3.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, 20));
+
+        txtNIK1.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        txtNIK1.setBorder(null);
+        jPanel3.add(txtNIK1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 220, 30));
+
+        jLabel42.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(48, 85, 134));
+        jLabel42.setText("Agama");
+        jPanel3.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 43, 20));
+
+        radLaki1.setText("Laki - Laki");
+        jPanel3.add(radLaki1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 80, -1));
+
+        radPer1.setText("Perempuan");
+        radPer1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radPer1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(radPer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 90, -1));
+
+        jLabel43.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(48, 85, 134));
+        jLabel43.setText("NIK");
+        jPanel3.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 43, 20));
+
+        cmbAgama1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Islam", "Kristen", "Katolik", "Budha", "Hindu", "Lainnya" }));
+        jPanel3.add(cmbAgama1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 80, -1));
+
+        jLabel44.setBackground(new java.awt.Color(52, 106, 163));
+        jLabel44.setForeground(new java.awt.Color(52, 106, 163));
+        jLabel44.setText("______________________________________________");
+        jPanel3.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 230, -1));
+
+        jLabel45.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(48, 85, 134));
+        jLabel45.setText("Tanggal Lahir");
+        jPanel3.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 80, 20));
+
+        txtTglLahir1.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        txtTglLahir1.setBorder(null);
+        jPanel3.add(txtTglLahir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 220, 30));
+
+        jLabel46.setBackground(new java.awt.Color(52, 106, 163));
+        jLabel46.setForeground(new java.awt.Color(52, 106, 163));
+        jLabel46.setText("______________________________________________");
+        jPanel3.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 230, -1));
+
+        jLabel47.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(48, 85, 134));
+        jLabel47.setText("Tempat Lahir");
+        jPanel3.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, 80, 20));
+
+        txtTLahir1.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        txtTLahir1.setBorder(null);
+        jPanel3.add(txtTLahir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 220, 30));
+
+        jLabel48.setBackground(new java.awt.Color(52, 106, 163));
+        jLabel48.setForeground(new java.awt.Color(52, 106, 163));
+        jLabel48.setText("______________________________________________");
+        jPanel3.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 230, -1));
+
+        txtAlamat1.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        txtAlamat1.setBorder(null);
+        jPanel3.add(txtAlamat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 220, 30));
+
+        jLabel49.setBackground(new java.awt.Color(52, 106, 163));
+        jLabel49.setForeground(new java.awt.Color(52, 106, 163));
+        jLabel49.setText("______________________________________________");
+        jPanel3.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 230, -1));
+
+        jLabel50.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(48, 85, 134));
+        jLabel50.setText("No. Telepon");
+        jPanel3.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 70, 20));
+
+        txtTelepon1.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        txtTelepon1.setBorder(null);
+        jPanel3.add(txtTelepon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 220, 30));
+
+        jLabel51.setBackground(new java.awt.Color(52, 106, 163));
+        jLabel51.setForeground(new java.awt.Color(52, 106, 163));
+        jLabel51.setText("______________________________________________");
+        jPanel3.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 230, -1));
+
+        jLabel52.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(48, 85, 134));
+        jLabel52.setText("Asal Sekolah");
+        jPanel3.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 100, 20));
+
+        txtAsalSkl1.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        txtAsalSkl1.setBorder(null);
+        jPanel3.add(txtAsalSkl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, 220, 30));
+
+        jLabel53.setBackground(new java.awt.Color(52, 106, 163));
+        jLabel53.setForeground(new java.awt.Color(52, 106, 163));
+        jLabel53.setText("______________________________________________");
+        jPanel3.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 230, -1));
+
+        jLabel54.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(48, 85, 134));
+        jLabel54.setText("Alamat");
+        jPanel3.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 43, 20));
+
+        jLabel55.setBackground(new java.awt.Color(52, 106, 163));
+        jLabel55.setForeground(new java.awt.Color(52, 106, 163));
+        jLabel55.setText("______________________________________________");
+        jPanel3.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 290, 230, -1));
+
+        txtNilaiRpt1.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        txtNilaiRpt1.setBorder(null);
+        jPanel3.add(txtNilaiRpt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 220, 30));
+
+        jLabel56.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        jLabel56.setForeground(new java.awt.Color(48, 85, 134));
+        jLabel56.setText("Nilai Raport");
+        jPanel3.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 70, 20));
+
+        btnSimEdit1.setBackground(new java.awt.Color(52, 106, 163));
+        btnSimEdit1.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        btnSimEdit1.setForeground(new java.awt.Color(255, 255, 255));
+        btnSimEdit1.setText("SIMPAN");
+        btnSimEdit1.setBorder(null);
+        btnSimEdit1.setBorderPainted(false);
+        btnSimEdit1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSimEdit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSimEdit1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnSimEdit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 120, 30));
+
+        pEdit.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 730, 470));
+
+        bg.add(pEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 770, 550));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -635,22 +880,95 @@ public class FMahasiswa extends javax.swing.JFrame {
         sideList.setBackground(new Color(190,193,202));
     }//GEN-LAST:event_sideListMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
+        
+        try {
+            
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        clearForm();
+    }//GEN-LAST:event_btnSimpanActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void radPerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radPerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_radPerActionPerformed
 
     private void btneditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditActionPerformed
-        // TODO add your handling code here:
+       pList.setVisible(false);
+       pEdit.setVisible(true);
     }//GEN-LAST:event_btneditActionPerformed
 
     private void btnhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhapusActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnhapusActionPerformed
 
+    private void btnbatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbatalActionPerformed
+        clearForm();
+        pList.setVisible(true);
+        pEdit.setVisible(false);
+    }//GEN-LAST:event_btnbatalActionPerformed
+
+    private void radPer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radPer1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radPer1ActionPerformed
+
+    private void btnSimEdit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimEdit1ActionPerformed
+        try {
+            
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        clearForm();
+        pList.setVisible(true);
+        pEdit.setVisible(false);
+    }//GEN-LAST:event_btnSimEdit1ActionPerformed
+
+    public void setForm()
+    {
+        sideHome.setVisible(true);
+        txtNama.setBackground(new Color(0,0,0,1));
+        txtNISN.setBackground(new Color(0,0,0,1));
+        txtNIK.setBackground(new Color(0,0,0,1));
+        txtTelepon.setBackground(new Color(0,0,0,1));
+        txtAlamat.setBackground(new Color(0,0,0,1));
+        txtAsalSkl.setBackground(new Color(0,0,0,1));
+        txtNilaiRpt.setBackground(new Color(0,0,0,1));
+        txtTLahir.setBackground(new Color(0,0,0,1));
+        txtTglLahir.setBackground(new Color(0,0,0,1));
+        pList.setVisible(false);
+        pInput.setVisible(false);
+        pEdit.setVisible(false);
+    }
+    
+    public void clearForm()
+    {
+        txtNama.setText("");
+        txtNISN.setText("");
+        txtNIK.setText("");
+        txtTelepon.setText("");
+        txtAlamat.setText("");
+        txtAsalSkl.setText("");
+        txtNilaiRpt.setText("");
+        txtTLahir.setText("");
+        txtTglLahir.setText("");
+        radLaki.setSelected(false);
+        radPer.setSelected(false);
+        cmbAgama.setSelectedIndex(0);
+        
+        txtNama1.setText("");
+        txtNISN1.setText("");
+        txtNIK1.setText("");
+        txtTelepon1.setText("");
+        txtAlamat1.setText("");
+        txtAsalSkl1.setText("");
+        txtNilaiRpt1.setText("");
+        txtTLahir1.setText("");
+        txtTglLahir1.setText("");
+        radLaki1.setSelected(false);
+        radPer1.setSelected(false);
+        cmbAgama1.setSelectedIndex(0);
+    }
     
     /**
      * @param args the command line arguments
@@ -695,15 +1013,20 @@ public class FMahasiswa extends javax.swing.JFrame {
     private javax.swing.JLabel btnKeluar2;
     private javax.swing.JLabel btnKeluar3;
     private javax.swing.JLabel btnMin;
+    private javax.swing.JButton btnSimEdit1;
+    private javax.swing.JButton btnSimpan;
+    private javax.swing.JButton btnbatal;
     private javax.swing.JButton btnedit;
     private javax.swing.JButton btnhapus;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> cmbAgama;
+    private javax.swing.JComboBox<String> cmbAgama1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -717,6 +1040,7 @@ public class FMahasiswa extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
@@ -725,39 +1049,72 @@ public class FMahasiswa extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JPanel logo;
     private javax.swing.JPanel logout;
     private javax.swing.JPanel p1;
     private javax.swing.JPanel p2;
+    private javax.swing.JPanel p3;
+    private javax.swing.JPanel pEdit;
     private javax.swing.JPanel pHome;
     private javax.swing.JPanel pInput;
     private javax.swing.JPanel pList;
+    private javax.swing.JRadioButton radLaki;
+    private javax.swing.JRadioButton radLaki1;
+    private javax.swing.JRadioButton radPer;
+    private javax.swing.JRadioButton radPer1;
     private javax.swing.JPanel sideHome;
     private javax.swing.JPanel sideInput;
     private javax.swing.JPanel sideList;
     private javax.swing.JPanel sidepane;
     private javax.swing.JPanel toppane;
     private javax.swing.JTextField txtAlamat;
+    private javax.swing.JTextField txtAlamat1;
     private javax.swing.JTextField txtAsalSkl;
+    private javax.swing.JTextField txtAsalSkl1;
     private javax.swing.JTextField txtNIK;
+    private javax.swing.JTextField txtNIK1;
     private javax.swing.JTextField txtNISN;
+    private javax.swing.JTextField txtNISN1;
     private javax.swing.JTextField txtNama;
+    private javax.swing.JTextField txtNama1;
     private javax.swing.JTextField txtNilaiRpt;
+    private javax.swing.JTextField txtNilaiRpt1;
     private javax.swing.JTextField txtTLahir;
+    private javax.swing.JTextField txtTLahir1;
+    private javax.swing.JTextField txtTelepon;
+    private javax.swing.JTextField txtTelepon1;
     private javax.swing.JTextField txtTglLahir;
-    private javax.swing.JTextField txttelepon;
+    private javax.swing.JTextField txtTglLahir1;
     // End of variables declaration//GEN-END:variables
 }
