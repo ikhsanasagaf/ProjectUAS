@@ -21,6 +21,7 @@ public class FMahasiswa extends javax.swing.JFrame {
     int mousepX;
     int mousepY;
     String gender;
+    String genderEdit;
     
     List<ModelTabel> mhs = new ArrayList<>();
     
@@ -29,6 +30,7 @@ public class FMahasiswa extends javax.swing.JFrame {
         showTableData();
         setForm();
         groupRadio();
+        groupRadioEdit();
     }
 
     /**
@@ -41,6 +43,7 @@ public class FMahasiswa extends javax.swing.JFrame {
     private void initComponents() {
 
         btnGroup = new javax.swing.ButtonGroup();
+        btnGroupEdit = new javax.swing.ButtonGroup();
         bg = new javax.swing.JPanel();
         sidepane = new javax.swing.JPanel();
         logo = new javax.swing.JPanel();
@@ -104,7 +107,7 @@ public class FMahasiswa extends javax.swing.JFrame {
         p2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        btnhapus = new javax.swing.JButton();
+        btnHapus = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblMhs = new javax.swing.JTable();
         btnEdit = new javax.swing.JButton();
@@ -119,7 +122,7 @@ public class FMahasiswa extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         txtNama1 = new javax.swing.JTextField();
-        btnbatal = new javax.swing.JButton();
+        btnBatal = new javax.swing.JButton();
         jLabel37 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         txtNISN1 = new javax.swing.JTextField();
@@ -130,10 +133,9 @@ public class FMahasiswa extends javax.swing.JFrame {
         radLaki1 = new javax.swing.JRadioButton();
         radPer1 = new javax.swing.JRadioButton();
         jLabel43 = new javax.swing.JLabel();
-        cmbAgama1 = new javax.swing.JComboBox<>();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
-        txtTglLahir1 = new javax.swing.JTextField();
+        txtId = new javax.swing.JTextField();
         jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
         txtTLahir1 = new javax.swing.JTextField();
@@ -151,6 +153,8 @@ public class FMahasiswa extends javax.swing.JFrame {
         txtNilaiRpt1 = new javax.swing.JTextField();
         jLabel56 = new javax.swing.JLabel();
         btnSimEdit1 = new javax.swing.JButton();
+        txtTglLahir1 = new javax.swing.JTextField();
+        cmbAgama1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Mahasiswa");
@@ -405,7 +409,7 @@ public class FMahasiswa extends javax.swing.JFrame {
         jLabel22.setText("Agama");
         jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 43, 20));
 
-        radLaki.setText("Laki - Laki");
+        radLaki.setText("Laki-Laki");
         radLaki.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 radLakiActionPerformed(evt);
@@ -552,19 +556,19 @@ public class FMahasiswa extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(245, 245, 245));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnhapus.setBackground(new java.awt.Color(52, 106, 163));
-        btnhapus.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
-        btnhapus.setForeground(new java.awt.Color(255, 255, 255));
-        btnhapus.setText("HAPUS");
-        btnhapus.setBorder(null);
-        btnhapus.setBorderPainted(false);
-        btnhapus.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnhapus.addActionListener(new java.awt.event.ActionListener() {
+        btnHapus.setBackground(new java.awt.Color(52, 106, 163));
+        btnHapus.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        btnHapus.setForeground(new java.awt.Color(255, 255, 255));
+        btnHapus.setText("HAPUS");
+        btnHapus.setBorder(null);
+        btnHapus.setBorderPainted(false);
+        btnHapus.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnhapusActionPerformed(evt);
+                btnHapusActionPerformed(evt);
             }
         });
-        jPanel2.add(btnhapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 120, 30));
+        jPanel2.add(btnHapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 120, 30));
 
         tblMhs.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -577,6 +581,11 @@ public class FMahasiswa extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblMhs.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblMhsMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tblMhs);
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 680, 400));
@@ -660,19 +669,19 @@ public class FMahasiswa extends javax.swing.JFrame {
         txtNama1.setBorder(null);
         jPanel3.add(txtNama1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 220, 30));
 
-        btnbatal.setBackground(new java.awt.Color(52, 106, 163));
-        btnbatal.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
-        btnbatal.setForeground(new java.awt.Color(255, 255, 255));
-        btnbatal.setText("BATAL");
-        btnbatal.setBorder(null);
-        btnbatal.setBorderPainted(false);
-        btnbatal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnbatal.addActionListener(new java.awt.event.ActionListener() {
+        btnBatal.setBackground(new java.awt.Color(52, 106, 163));
+        btnBatal.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        btnBatal.setForeground(new java.awt.Color(255, 255, 255));
+        btnBatal.setText("BATAL");
+        btnBatal.setBorder(null);
+        btnBatal.setBorderPainted(false);
+        btnBatal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBatal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnbatalActionPerformed(evt);
+                btnBatalActionPerformed(evt);
             }
         });
-        jPanel3.add(btnbatal, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, 120, 30));
+        jPanel3.add(btnBatal, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, 120, 30));
 
         jLabel37.setBackground(new java.awt.Color(52, 106, 163));
         jLabel37.setForeground(new java.awt.Color(52, 106, 163));
@@ -707,7 +716,12 @@ public class FMahasiswa extends javax.swing.JFrame {
         jLabel42.setText("Agama");
         jPanel3.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 43, 20));
 
-        radLaki1.setText("Laki - Laki");
+        radLaki1.setText("Laki-laki");
+        radLaki1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radLaki1ActionPerformed(evt);
+            }
+        });
         jPanel3.add(radLaki1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 80, -1));
 
         radPer1.setText("Perempuan");
@@ -723,9 +737,6 @@ public class FMahasiswa extends javax.swing.JFrame {
         jLabel43.setText("NIK");
         jPanel3.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 43, 20));
 
-        cmbAgama1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Islam", "Kristen", "Katolik", "Budha", "Hindu", "Lainnya" }));
-        jPanel3.add(cmbAgama1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 80, -1));
-
         jLabel44.setBackground(new java.awt.Color(52, 106, 163));
         jLabel44.setForeground(new java.awt.Color(52, 106, 163));
         jLabel44.setText("______________________________________________");
@@ -736,9 +747,9 @@ public class FMahasiswa extends javax.swing.JFrame {
         jLabel45.setText("Tanggal Lahir");
         jPanel3.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 80, 20));
 
-        txtTglLahir1.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
-        txtTglLahir1.setBorder(null);
-        jPanel3.add(txtTglLahir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 220, 30));
+        txtId.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        txtId.setBorder(null);
+        jPanel3.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 40, 20, 30));
 
         jLabel46.setBackground(new java.awt.Color(52, 106, 163));
         jLabel46.setForeground(new java.awt.Color(52, 106, 163));
@@ -829,6 +840,18 @@ public class FMahasiswa extends javax.swing.JFrame {
         });
         jPanel3.add(btnSimEdit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 120, 30));
 
+        txtTglLahir1.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        txtTglLahir1.setBorder(null);
+        jPanel3.add(txtTglLahir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 220, 30));
+
+        cmbAgama1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Islam", "Kristen", "Katolik", "Budha", "Hindu", "Lainnya" }));
+        cmbAgama1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbAgama1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmbAgama1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 80, -1));
+
         pEdit.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 730, 470));
 
         bg.add(pEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 770, 550));
@@ -891,6 +914,8 @@ public class FMahasiswa extends javax.swing.JFrame {
         pHome.setVisible(false);
         pInput.setVisible(false);
         pList.setVisible(true);
+        btnEdit.setEnabled(false);
+        btnHapus.setEnabled(false);
         showTableData();
         
         sideHome.setBackground(new Color(173,177,188));
@@ -902,6 +927,12 @@ public class FMahasiswa extends javax.swing.JFrame {
     {
         btnGroup.add(radLaki);
         btnGroup.add(radPer);
+    }
+    
+    public void groupRadioEdit()
+    {
+        btnGroupEdit.add(radLaki1);
+        btnGroupEdit.add(radPer1);
     }
     
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
@@ -947,27 +978,74 @@ public class FMahasiswa extends javax.swing.JFrame {
         gender = radPer.getText();
     }//GEN-LAST:event_radPerActionPerformed
 
-    private void btnhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhapusActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnhapusActionPerformed
+    private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
+        int id_mhs = Integer.parseInt(txtId.getText());
+        String sql = "DELETE FROM mhs_baru WHERE id_mhs=?";
+        try{
+            PreparedStatement pms = Connection.conn.prepareStatement(sql);
+            pms.setInt(1, id_mhs);
+            pms.execute();
+            Connection.stmt.close();
+            Connection.conn.close();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        showTableData();
 
-    private void btnbatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbatalActionPerformed
+    }//GEN-LAST:event_btnHapusActionPerformed
+
+    private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
         clearForm();
         pList.setVisible(true);
         pEdit.setVisible(false);
-    }//GEN-LAST:event_btnbatalActionPerformed
+    }//GEN-LAST:event_btnBatalActionPerformed
 
     private void radPer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radPer1ActionPerformed
-        // TODO add your handling code here:
+        genderEdit = radPer1.getText();
+
     }//GEN-LAST:event_radPer1ActionPerformed
 
     private void btnSimEdit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimEdit1ActionPerformed
-        try {
-            
+        String nama = txtNama1.getText();
+        String nisn = txtNISN1.getText();
+        String nik = txtNIK1.getText();
+        String telepon = txtTelepon1.getText();
+        String tlahir = txtTLahir1.getText();
+        String tglLahir = txtTglLahir1.getText();
+        String alamat = txtAlamat1.getText();
+        String asalskl = txtAsalSkl1.getText();
+        String nilairpt = txtNilaiRpt1.getText();
+        String jk = genderEdit;
+        String agama = cmbAgama1.getSelectedItem().toString();
+        int id_mhs = Integer.parseInt(txtId.getText());
+        
+        String sql = "UPDATE mhs_baru SET nama=?, nik=?, nisn=?, jk=?, agama=?, tgl_lahir=?, tempat_lahir=?, "
+                + "alamat=?, asal_sekolah=?, no_telp=?, nilai_rapot=? WHERE id_mhs = ?";
+        try 
+        {
+            PreparedStatement pms = Connection.conn.prepareStatement(sql);
+            pms.setString(1, nama);
+            pms.setString(2, nik);
+            pms.setString(3, nisn);
+            pms.setString(4, jk);
+            pms.setString(5, agama);
+            pms.setString(6, tglLahir);
+            pms.setString(7, tlahir);
+            pms.setString(8, alamat);
+            pms.setString(9, asalskl);
+            pms.setString(10, telepon);
+            pms.setString(11, nilairpt);
+            pms.setInt(12, id_mhs);
+            pms.execute();
+            Connection.stmt.close();
+            Connection.conn.close();
         }catch(Exception e){
             e.printStackTrace();
         }
         clearForm();
+        showTableData();
         pList.setVisible(true);
         pEdit.setVisible(false);
     }//GEN-LAST:event_btnSimEdit1ActionPerformed
@@ -981,6 +1059,63 @@ public class FMahasiswa extends javax.swing.JFrame {
         gender = radLaki.getText();
     }//GEN-LAST:event_radLakiActionPerformed
 
+    private void tblMhsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMhsMouseClicked
+        int baris = tblMhs.getSelectedRow();
+        txtNama1.setText(mhs.get(baris).getNama());
+        txtNISN1.setText(mhs.get(baris).getNisn());
+        txtNIK1.setText(mhs.get(baris).getNik());
+        txtTelepon1.setText(mhs.get(baris).getNo_telp());
+        txtTLahir1.setText(mhs.get(baris).getTempat_lahir());
+        txtTglLahir1.setText(mhs.get(baris).getTgl_lahir());
+        txtAlamat1.setText(mhs.get(baris).getAlamat());
+        txtAsalSkl1.setText(mhs.get(baris).getAsal_sekolah());
+        txtNilaiRpt1.setText(Float.toString(mhs.get(baris).getNilai_rapot()));
+        if(mhs.get(baris).getJk().equals("Laki-laki"))
+        {
+            btnGroupEdit.setSelected(radLaki1.getModel(), true);
+        } 
+        else if(mhs.get(baris).getJk().equals("Perempuan"))
+        {
+            btnGroupEdit.setSelected(radPer1.getModel(), true);
+        }
+        
+        if(null == mhs.get(baris).getAgama())
+        {
+            cmbAgama1.setSelectedIndex(5);
+        }
+        else switch (mhs.get(baris).getAgama()) {
+            case "Islam":
+                cmbAgama1.setSelectedIndex(0);
+                break;
+            case "Kristen":
+                cmbAgama1.setSelectedIndex(1);
+                break;
+            case "Katolik":
+                cmbAgama1.setSelectedIndex(2);
+                break;
+            case "Budha":
+                cmbAgama1.setSelectedIndex(3);
+                break;
+            case "Hindu":
+                cmbAgama1.setSelectedIndex(4);
+                break;
+            default:
+                cmbAgama1.setSelectedIndex(5);
+                break;
+        }
+        txtId.setText(Integer.toString(mhs.get(baris).getId_mhs()));
+        btnEdit.setEnabled(true);
+        btnHapus.setEnabled(true);
+    }//GEN-LAST:event_tblMhsMouseClicked
+
+    private void radLaki1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radLaki1ActionPerformed
+        genderEdit = radLaki1.getText();
+    }//GEN-LAST:event_radLaki1ActionPerformed
+
+    private void cmbAgama1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbAgama1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbAgama1ActionPerformed
+
     public void setForm()
     {
         sideHome.setVisible(true);
@@ -993,9 +1128,21 @@ public class FMahasiswa extends javax.swing.JFrame {
         txtNilaiRpt.setBackground(new Color(0,0,0,1));
         txtTLahir.setBackground(new Color(0,0,0,1));
         txtTglLahir.setBackground(new Color(0,0,0,1));
+        txtNama1.setBackground(new Color(0,0,0,1));
+        txtNISN1.setBackground(new Color(0,0,0,1));
+        txtNIK1.setBackground(new Color(0,0,0,1));
+        txtTelepon1.setBackground(new Color(0,0,0,1));
+        txtAlamat1.setBackground(new Color(0,0,0,1));
+        txtAsalSkl1.setBackground(new Color(0,0,0,1));
+        txtNilaiRpt1.setBackground(new Color(0,0,0,1));
+        txtTLahir1.setBackground(new Color(0,0,0,1));
+        txtTglLahir1.setBackground(new Color(0,0,0,1));
+        txtId.setBackground(new Color(0,0,0,1));
         pList.setVisible(false);
         pInput.setVisible(false);
         pEdit.setVisible(false);
+        txtId.setVisible(false);
+
     }
     
     public void clearForm()
@@ -1021,7 +1168,7 @@ public class FMahasiswa extends javax.swing.JFrame {
         txtAsalSkl1.setText("");
         txtNilaiRpt1.setText("");
         txtTLahir1.setText("");
-        txtTglLahir1.setText("");
+        txtId.setText("");
         radLaki1.setSelected(false);
         radPer1.setSelected(false);
         cmbAgama1.setSelectedIndex(0);
@@ -1127,9 +1274,12 @@ public class FMahasiswa extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
+    private javax.swing.JButton btnBatal;
     private javax.swing.JLabel btnClose;
     private javax.swing.JButton btnEdit;
     private javax.swing.ButtonGroup btnGroup;
+    private javax.swing.ButtonGroup btnGroupEdit;
+    private javax.swing.JButton btnHapus;
     private javax.swing.JLabel btnKeluar;
     private javax.swing.JLabel btnKeluar1;
     private javax.swing.JLabel btnKeluar2;
@@ -1137,8 +1287,6 @@ public class FMahasiswa extends javax.swing.JFrame {
     private javax.swing.JLabel btnMin;
     private javax.swing.JButton btnSimEdit1;
     private javax.swing.JButton btnSimpan;
-    private javax.swing.JButton btnbatal;
-    private javax.swing.JButton btnhapus;
     private javax.swing.JComboBox<String> cmbAgama;
     private javax.swing.JComboBox<String> cmbAgama1;
     private javax.swing.JLabel jLabel1;
@@ -1223,6 +1371,7 @@ public class FMahasiswa extends javax.swing.JFrame {
     private javax.swing.JTextField txtAlamat1;
     private javax.swing.JTextField txtAsalSkl;
     private javax.swing.JTextField txtAsalSkl1;
+    private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNIK;
     private javax.swing.JTextField txtNIK1;
     private javax.swing.JTextField txtNISN;
