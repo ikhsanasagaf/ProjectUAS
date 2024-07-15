@@ -124,6 +124,12 @@ public class ModelTabel {
         return nilai_rapot;
     }
     
+    public void tes()
+    {
+  
+        
+    }
+    
     
     
 }
