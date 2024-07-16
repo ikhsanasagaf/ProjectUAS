@@ -8,7 +8,7 @@ package Models;
  *
  * @author ikhsan
  */
-public class ModelTabel {
+public class Mhs {
     private int id_mhs;
     private String nama;
     private String nik;
@@ -21,10 +21,12 @@ public class ModelTabel {
     private String asal_sekolah;
     private String no_telp;
     private float nilai_rapot;
+    private int id_fk;
+    private int id_progdi;
 
-    public ModelTabel(int id_mhs, String nama, String nik, String nisn, String jk, 
+    public Mhs(int id_mhs, String nama, String nik, String nisn, String jk, 
             String agama, String tgl_lahir, String tempat_lahir, String alamat,
-            String asal_sekolah, String no_telp, float nilai_rapot)
+            String asal_sekolah, String no_telp, int id_fk, int id_progdi, float nilai_rapot)
     {
         this.id_mhs = id_mhs;
         this.nama = nama;
@@ -37,6 +39,8 @@ public class ModelTabel {
         this.alamat = alamat;
         this.asal_sekolah = asal_sekolah;
         this.no_telp = no_telp;
+        this.id_fk = id_fk;
+        this.id_progdi = id_progdi;
         this.nilai_rapot = nilai_rapot;
     }
     
@@ -124,10 +128,18 @@ public class ModelTabel {
         return nilai_rapot;
     }
     
-    public void tes()
-    {
-  
-        
+    /**
+     * @return the id_fak
+     */
+    public int getId_fk() {
+        return id_fk;
+    }
+    
+    /**
+     * @return the id_progdi
+     */
+    public int getId_progdi() {
+        return id_progdi;
     }
     
     
